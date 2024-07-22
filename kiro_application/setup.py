@@ -22,6 +22,7 @@ setup(
         'console_scripts': [
             'move_limo = kiro_application.move_limo:main',
             'turn_absolute = kiro_application.turn_absolute:main',
+            'stop = kiro_application.stop:main',
         ],
     },
 )
