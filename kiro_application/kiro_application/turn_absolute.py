@@ -70,9 +70,9 @@ class TurnAbsolute(Node):
         self.cmd_pub_.publish(cmd)
     def normalize_angole(self, angle):
         while angle >= math.pi:
-            angle -= 2*math.pi
+            angle -= 2 * math.pi
         while angle <= -math.pi:
-            angle += 2*math.pi
+            angle += 2 * math.pi
         return angle
 
 def main(args=None):
