@@ -1,4 +1,6 @@
 from setuptools import find_packages, setup
+import os
+from glob import glob
 
 package_name = 'kiro_application'
 
@@ -10,6 +12,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*'))),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -24,6 +27,8 @@ setup(
             'turn_absolute = kiro_application.turn_absolute:main',
             'stop = kiro_application.stop:main',
             'lane_detect = kiro_application.lane_detect:main',
+            'limo_control = kiro_application.limo_control:main',
+            'take_a_picture = kiro_application.take_a_picture:main',
         ],
     },
 )
